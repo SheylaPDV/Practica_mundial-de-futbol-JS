@@ -1,7 +1,7 @@
-console.log('===========================================================')
-console.log('========= COMIENZO DE LA FASE DE ELIMINATORIAS ============')
-console.log('===========================================================')
-console.log('Equipos que van a participar en el playoff:')
+console.log('\n================================================')
+console.log('===== COMIENZO DE LA FASE DE ELIMINATORIAS =====')
+console.log('================================================\n')
+console.log('Equipos que van a participar en el playoff:\n')
 
 let listaEquipos = ['Brasil', 'Ecuador', 'Japón', 'Francia', 'EEUU', 'Inglaterra', 'Argentina', 'Holanda',
     'Alemania', 'Islas Feroe', 'España', 'Jamaica', 'Portugal', 'Polonia', 'Suecia', 'Finlandia']
@@ -9,7 +9,7 @@ let listaEquipos = ['Brasil', 'Ecuador', 'Japón', 'Francia', 'EEUU', 'Inglaterr
 let ganadores = []
 let perdedores = []
 console.log(listaEquipos)
-console.log('\n========= OCTAVOS DE FINAL ==========\n')
+console.log('\n===== OCTAVOS DE FINAL =====\n')
 
 function borrarItemDeArray(arr, item) {
     var i = arr.indexOf(item);
@@ -27,26 +27,27 @@ while (listaEquipos.length != 0) {
 
     // Seleccion de marcador
     var marcador1 = Math.floor(Math.random() * 10)
-    var marcador2 = marcador1
+    var marcador2 = marcador1 // para que se cumpla la condicion d que sean iguales
     while (marcador1 == marcador2) {
-        marcador2 = Math.floor(Math.random() * 10)
+        marcador2 = Math.floor(Math.random() * 10)//elige otro numero aleatorio hasta que no sean iguales
     }
 
     // Seleccion de ganador
-    var ganador = undefined
+    var ganador = undefined // variable vacia
     if (marcador1 < marcador2) {
-        ganador = equipo2;
+        ganador = equipo2; // el mayor se mete en la variable
     } else {
-        ganador = equipo1;
+        ganador = equipo1; 
     }
-    console.log(`${equipo1} ${marcador1}  -  ${marcador2} ${equipo2}-----> ${ganador}`)
+    
+    console.log(`${equipo1} ${marcador1}  -  ${marcador2} ${equipo2} => ${ganador}`)
 
-    ganadores.push(ganador)
-
+    ganadores.push(ganador) // metemos ganadores en ganadores
 }
+
 listaEquipos = ganadores.slice();
 ganadores = []
-console.log('\n================ CUARTOS DE FINAL ==================\n')
+console.log('\n===== CUARTOS DE FINAL =====\n')
 
 while (listaEquipos.length != 0) {
     // Seleccion de equipo
@@ -71,16 +72,15 @@ while (listaEquipos.length != 0) {
     } else {
         ganador = equipo1;
     }
-    console.log(`${equipo1} ${marcador1}  -  ${marcador2} ${equipo2}-----> ${ganador}`)
+
+    console.log(`${equipo1} ${marcador1}  -  ${marcador2} ${equipo2} => ${ganador}`)
 
     ganadores.push(ganador);
-
 }
 
 listaEquipos = ganadores.slice();
 ganadores = []
-
-console.log('\n============== SEMIFINALES ===============\n')
+console.log('\n===== SEMIFINALES =====\n')
 
 while (listaEquipos.length != 0) {
     // Seleccion de equipo
@@ -107,12 +107,14 @@ while (listaEquipos.length != 0) {
         ganador = equipo1;
         perdedores.push(equipo2)
     }
-    console.log(`${equipo1} ${marcador1}  -  ${marcador2} ${equipo2}-----${ganador}`)
+
+    console.log(`${equipo1} ${marcador1}  -  ${marcador2} ${equipo2} => ${ganador}`)
 
     ganadores.push(ganador)
-
 }
-console.log('\n============= TERCER Y CUARTO PUESTO ==============\n')
+
+console.log('\n===== TERCER Y CUARTO PUESTO =====\n')
+
 while (perdedores.length != 0) {
     // Seleccion de equipo
     var numAleatorio = Math.floor(Math.random() * perdedores.length) //esto me da un equipo aleatorio (por indice)
@@ -137,14 +139,12 @@ while (perdedores.length != 0) {
         ganador = equipo1;
     }
 
-    console.log(`${equipo1} ${marcador1}  -  ${marcador2} ${equipo2}-----${ganador}`)
-
+    console.log(`${equipo1} ${marcador1}  -  ${marcador2} ${equipo2} => ${ganador}`)
 }
+
 listaEquipos = ganadores.slice();
 ganadores = []
-
-
-console.log('\n========== FINAL ==========\n')
+console.log('\n===== FINAL =====\n')
 
 while (listaEquipos.length != 0) {
     // Seleccion de equipo
@@ -170,11 +170,9 @@ while (listaEquipos.length != 0) {
         ganador = equipo1;
     }
 
-    console.log(`${equipo1} ${marcador1}  -  ${marcador2} ${equipo2}-----> ${ganador}`)
-
+    console.log(`${equipo1} ${marcador1}  -  ${marcador2} ${equipo2} => ${ganador}`)
 }
 
-listaEquipos = ganadores.slice();
 console.log('\n===========================\n');
 console.log(`¡${ganador} es el campeón del mundo!`)
 console.log('\n===========================\n')
