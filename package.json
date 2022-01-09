@@ -1,0 +1,19 @@
+{
+  "name": "practica_javascript",
+  "version": "1.0.0",
+  "description": "World Cup Simulator",
+  "main": "index2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SheylaPDV/practica_javaScript.git"
+  },
+  "author": "Sheyla Perez del Valle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SheylaPDV/practica_javaScript/issues"
+  },
+  "homepage": "https://github.com/SheylaPDV/practica_javaScript#readme"
+}
